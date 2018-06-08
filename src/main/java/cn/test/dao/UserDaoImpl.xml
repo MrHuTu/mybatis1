@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="cn.test.dao.UserDaoImpl">
+
+
+	<resultMap type="cn.test.entity.User" id="BasicMap">
+		<result column="uname" property="name"/>
+		<result column="address" property="address"/>
+		<collection property="orders" ofType="cn.test.entity.Order">		
+			<result  column="ordername" property="ordername"/>		
+		</collection>
+	</resultMap>
+	
+	
+	<select id="selectUserOfOrder" resultMap="BasicMap">
+	
+		select  u.`name` uname,u.address , o.ordername from `user` u ,`order` o where u.userid=o.userid
+	
+	</select>
+	
+	<insert id="addUser" useGeneratedKeys="true"  parameterType="cn.test.entity.User" keyProperty="id"> 
+		insert into user 		
+		<set>
+			<if test="name!=null">
+			  name=#{name}
+			</if>
+			<if test="address!=null">
+				address=#{address}
+			</if>
+			<if test="userid">
+				userid=#{userid}
+			</if>	
+		
+		</set>
+	
+	 </insert>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="cn.test.dao.PersionDaoImpl">
+	<select id="selectPersion" resultType="cn.test.entity.Persion" >
+	   select * from persion
+	</select>
+	
+	
+	<select id="selectPersion1" resultType="Map" >
+	   select * from persion where persion
+	</select>
+	
+	
+	<select id="selectPersion2" resultType="Map" parameterType="Map">
+	   select * from persion 
+		<where>
+			  <if test="name!=null">
+					 name=#{name}  
+			  </if>
+			  <if test="age!=null">
+					 age=#{age}	  
+			  </if>
+			  <if test="sex!=null">			  
+			  		 sex=#{sex}
+			  </if>
+		</where>
+	</select>
+	
+	<update id="updatePersion" parameterType="map">
+		update persion 
+		<set>
+		  <if test="name!=null">
+		  		name=#{name}
+		  </if>	
+		  <if test="age!=null">
+		  		age=#{age}
+		  </if>
+		  
+		  <if test="sex!=null">
+		  		sex=#{sex}
+		  </if>	
+		  	id=id
+		</set>
+		where id=#{id}
+	</update>
+</mapper>
