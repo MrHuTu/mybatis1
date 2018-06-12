@@ -13,9 +13,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
-
-
 import cn.test.entity.User;
 
 public class UserDaoImpl {
@@ -53,6 +50,7 @@ public class UserDaoImpl {
 		user.setName("6.1了呀");
 		
 		
+		@SuppressWarnings("unused")
 		int orders = 	sql.insert("cn.test.dao.UserDaoImpl.addUser",user);
 		sql.commit();
 		

@@ -5,7 +5,6 @@ package cn.test.dao;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -15,8 +14,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Before;
 import org.junit.Test;
-
-import cn.test.entity.Persion;
 
 
 public class PersionDaoImpl {

@@ -2,6 +2,7 @@ package cn.test.classload;
 
 public class Human {
 	
+	@SuppressWarnings("unused")
 	private static String name=setName();
 	
 	private int age =setAge();
