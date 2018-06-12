@@ -17,7 +17,7 @@ import org.junit.Test;
 
 
 public class PersionDaoImpl {
-	
+	//test .gitignore
 	private SqlSession sql;
 	
 	/*@Test
