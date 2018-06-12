@@ -43,7 +43,7 @@ public class UserDaoImpl {
 		
 	}
 	@Test
-	public void addUser(){
+	public void addUser(){//hahahaha
 		
 		User user = new User();
 		
